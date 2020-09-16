@@ -31,7 +31,9 @@ class App extends Component {
 
     this.setState({
       items: updatedItems,
-
+      item: '',
+      id: uuidv4(),
+      editItem: true
     })
   }
 
@@ -49,7 +51,6 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state)
     return (
       <div className="container">
         <div className="row">
@@ -59,7 +60,7 @@ class App extends Component {
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
               editItem={this.state.editItem} />
-            <TodoList items={this.state.item}
+            <TodoList items={this.state.items}
               clearList={this.clearList}
               handleDelete={this.handleDelete}
               handleEdit={this.handleEdit} />
